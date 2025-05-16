@@ -102,13 +102,14 @@ If no errors: `there is no lexical error.`
 - Unmatched comment closers (`*/` without `/*`)
 - **General invalid input:** Any text that doesn't match language rules Errors are reported with:
 - The line number where they occurred - The first 3 characters of the invalid lexeme
-- A descriptive error message ## Limitations This phase has some intentional limitations: -
-- Only performs lexical analysis (no parsing/semantic analysis) -
-- Numbers must be integers (no floating point) -
-- Error messages show truncated lexemes (first 3 characters) -
-- The symbol table doesn't track scope (will be added in later phases) ## Next Steps This is Phase 1 of the compiler.
-Future phases will add: -
-- Syntax analysis (parsing) -
+- A descriptive error message
+## Limitations This phase has some intentional limitations: 
+- Only performs lexical analysis (no parsing/semantic analysis) 
+- Numbers must be integers (no floating point) 
+- Error messages show truncated lexemes (first 3 characters) 
+- The symbol table doesn't track scope (will be added in later phases)
+## Next Steps This is Phase 1 of the compiler. Future phases will add: 
+- Syntax analysis (parsing) 
 - Semantic analysis - Code generation
 ## Contributors 
 - [Taha Hosseinpour](https://github.com/ThomasGraceman)
