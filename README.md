@@ -11,9 +11,10 @@ This repository contains the first phase of a C-Minus compiler implementation, f
 6. [How to Use](#how-to-use)
 7. [Error Handling](#error-handling)
 8. [Limitations](#limitations)
+9. [Next Steps](#next-steps)
+10. [Contributors](#contributors)
 
 ## Overview
-
 This compiler phase performs lexical analysis (scanning) of C-Minus source code, which includes:
 - Tokenizing the input program
 - Building a symbol table
@@ -21,27 +22,21 @@ This compiler phase performs lexical analysis (scanning) of C-Minus source code,
 - Generating output files for the next compilation phases
 
 ## C-Minus Language
-
 C-Minus is a simplified subset of C with the following lexical elements:
 
-### Keywords
-if, else, void, int, repeat, break, until, return
+**Keywords**: `if`, `else`, `void`, `int`, `repeat`, `break`, `until`, `return`
 
-### Identifiers
+**Identifiers**:
 - Start with a letter (a-z, A-Z)
 - Can contain letters and digits (0-9)
 
-### Numbers
-- Integer literals (one or more digits)
+**Numbers**: Integer literals (one or more digits)
 
-### Symbols
-; , [ ] ( ) { } + - * < = ==
+**Symbols**: `;` `,` `[` `]` `(` `)` `{` `}` `+` `-` `*` `<` `=` `==`
 
-### Comments
-- Multi-line comments between `/*` and `*/`
+**Comments**: Multi-line between `/*` and `*/`
 
 ## Implementation Details
-
 The scanner is implemented using:
 1. **ANTLR4** for tokenization (lexical analysis)
 2. A **Symbol Table** to track identifiers and keywords
@@ -79,34 +74,28 @@ Coordinates the entire scanning process:
 3. Generates output files
 
 ## Output Files
-
 The compiler produces three output files:
 
-1. **tokens.txt**  
-   Format: `[line number]. (TYPE, lexeme) (TYPE, lexeme)...`  
-   Example: `3. (KEYWORD, if) (SYMBOL, () (ID, x) (SYMBOL, ))`
+**tokens.txt**  
+Format: `[line number]. (TYPE, lexeme) (TYPE, lexeme)...`  
+Example: `3. (KEYWORD, if) (SYMBOL, () (ID, x) (SYMBOL, ))`
 
-2. **symbol_table.txt**  
-   Format: `[index]. [lexeme]`  
-   Example:  
-   `1. break`  
-   `2. else`  
-   `9. x`  (user-defined identifiers start at index 9)
+**symbol_table.txt**  
+Format: `[index]. [lexeme]`  
+Example: break, else, x
 
-3. **lexical_errors.txt**  
-   Format: `[line number]. (lexeme, error_message)`  
-   Example: `5. (23a, Invalid number)`  
-   If no errors: `there is no lexical error.`
+**lexical_errors.txt**  
+Format: `[line number]. (lexeme, error_message)`  
+Example: `5. (23a, Invalid number)`  
+If no errors: `there is no lexical error.`
 
 ## How to Use
-
 1. Place your C-Minus source code in `input.txt`
 2. Run the scanner:
-   ```bash
-   chmod +x cminus_scanner.py
-   ./cminus_scanner.py
-
-3. Check the output files:
+```bash
+chmod +x cminus_scanner.py
+./cminus_scanner.py
+Check the output files:
 
 tokens.txt - Tokenized program
 
@@ -157,12 +146,7 @@ Semantic analysis
 
 Code generation
 
-This README provides a complete overview while being accessible to someone new to compiler construction. It explains:
-1. What the project does
-2. The language being compiled
-3. How the implementation works
-4. How to use it
-5. What to expect in the output
-6. Current limitations
-
-The markdown formatting makes it easy to read both on GitHub and in plain text editors. You might want to add a "Development" or "Contributing" section if this is a collaborative project.
+Contributors
+[Taha Hosseinpour] (https://github.com/ThomasGraceman)
+[Nazanin Zarei] (https://github.com/nazaninzareirad)
+[Foozhan Fahimzade] (https://github.com/FoozhanFahimzade)
